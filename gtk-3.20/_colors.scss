@@ -3,7 +3,7 @@
 
 // Main definitions
 $base_color: if($variant == 'light', #ffffff, #455a64);
-$bg_color: if($variant == 'light', #f7f7f7, #37474f);
+$bg_color: if($variant == 'light', #f7f7f7, #000000);
 $fg_color: if($variant == 'light', #444, #cfd8dc);
 $text_color: if($variant == 'light', $fg_color, $fg_color);
 $headerbar_bg_color: if($variant == 'light', $bg_color, darken($base_color, 10%));
