@@ -6,8 +6,10 @@ $unity_color: #546e7a; /* Unity window border color */
 $backdrop_unity_color: darken($unity_color,10%); /* Backdrop Unity window border color */
 $unity_text_color: #dbdee0; /* Unity window text color */
 $backdrop_unity_text_color: darken($unity_text_color,10%); /* Backdrop Unity window text color */
-$unity_panel_color: darken($unity_color, 20%); /* Unity panel color #454D50 */
-$backdrop_unity_panel_color: darken($unity_panel_color, 10%); /* Backdrop Unity panel color */
+//$unity_panel_color: darken($unity_color, 20%); /* Unity panel color #454D50 */
+$unity_panel_color : red;
+//$backdrop_unity_panel_color: darken($unity_panel_color, 10%); /* Backdrop Unity panel color */
+$backdrop_unity_panel_color: red;
 
 UnityDecoration {
 
@@ -69,7 +71,7 @@ UnityDecoration.right {
   background-color: darken($unity_color, 0.6);
   background-size: 1px 120px;
   background-clip: border-box;
-  background-image: linear-gradient(to bottom, 
+  background-image: linear-gradient(to bottom,
                                     $unity_color,
                                     darken($unity_color, 0.6)
                                     );
