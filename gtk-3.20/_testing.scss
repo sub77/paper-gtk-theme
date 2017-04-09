@@ -1,0 +1,106 @@
+/**************
+* Mate Panel *
+***************/
+
+.mate-panel-menu-bar, .mate-panel-menu-bar menubar,
+panel-toplevel.background,
+panel-toplevel.background menubar {
+background-color: $panel_bg_color;
+text-shadow: none;
+ }
+
+.mate-panel-menu-bar button,
+#tasklist-button {
+  color: #EEEEEC;
+  text-shadow: none;
+  background-color: $panel_bg_color;
+  //box-shadow: inset 0 -2px #EEEEEC;
+  }
+
+.mate-panel-menu-bar button,
+#tasklist-button * {
+  //color: #EEEEEC;
+  padding: none;
+  border: none;
+  border-radius: none;
+  text-shadow: none;
+  //background-color: red;
+  box-shadow: none;
+  }
+
+#tasklist-button:hover {
+  //color: green;
+  text-shadow: none;
+  //background-color: green;
+  //box-shadow: inset 0 -2px #EEEEEC;
+  }
+/* ACTIVE TASKBAR BUTTON */
+#tasklist-button:checked {
+  color: white;
+  text-shadow: none;
+  background-color: #6E706C;
+  //box-shadow: inset 0 -1px #EEEEEC;
+  }
+
+%button,
+button:active {
+  @at-root %button_basic, & {
+    min-height: 16px;
+    min-width: 16px;
+    //padding: 4px 9px;
+    //border: 1px solid $borders_color;
+    //border-radius: 3px;
+    //transition: $button_transition;
+    text-shadow: none;
+    //background-color: red;
+
+    @include button(normal);
+
+    &.flat {
+      @include button(undecorated);
+      // to avoid adiacent buttons borders clashing when transitioning, the transition on the normal state is set
+      // to none, while it's added back in the hover state, so the button decoration will fade in on hover, but
+      // it won't fade out when the pointer leave the button allocation area. To make the transition more evident
+      // in this case the duration is increased.
+      transition: none;
+
+      &:hover {
+        //transition: $button_transition;
+        //transition-duration: 500ms;
+
+        &:active { transition: $button_transition; }
+      }
+    }
+
+    &:hover {
+      @include button(hover);
+      -gtk-icon-effect: highlight;
+    }
+
+    &:active,
+    &:checked {
+      @include button(active);
+
+      transition-duration: 50ms;
+    }
+
+    &:backdrop {
+      &.flat, & {
+        @include button(backdrop);
+
+        transition: $backdrop_transition;
+        -gtk-icon-effect: none;
+
+        &:active,
+        &:checked { @include button(backdrop-active); }
+
+        &:disabled {
+          @include button(backdrop-insensitive);
+
+          &:active,
+          &:checked { @include button(backdrop-insensitive-active); }
+        }
+      }
+    }
+  }
+}
