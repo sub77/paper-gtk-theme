@@ -3,7 +3,6 @@
 
 // Main definitions
 $base_color: if($variant == 'light', #ffffff, #000000);
-//$bg_color: if($variant == 'light', #f7f7f7, #050505);
 $bg_color: if($variant == 'light', #f7f7f7, #050505);
 $fg_color: if($variant == 'light', #444, #cfd8dc);
 $text_color: if($variant == 'light', $fg_color, $fg_color);
@@ -25,10 +24,10 @@ $purple: #673ab7;
 $borders_color: if($variant == 'light', darken($bg_color,20%), darken($bg_color,10%));
 $borders_edge: if($variant == 'light', transparentize(white, 0.8), transparentize(white, 0.9));
 $selected_fg_color: #ffffff;
-$selected_bg_color: if($variant == 'light', darken(#888A85,10%), $cyan);
+$selected_bg_color: if($variant == 'light', darken(#888A85,10%), $blue);
 //$selected_bg_color: blue;
 $selected_borders_color: if($variant == 'light', darken($selected_bg_color, 10%), $borders_color);
-$link_color: red;
+$link_color: blue;
 $link_visited_color:transparentize($link_color,0.5);
 $top_highlight: if($variant == 'light', transparentize(white, 0.8), transparentize(white, 0.7));
 $bottom_highlight: if($variant == 'light', transparentize(white, 0.7), transparentize(white, 0.9));
@@ -56,8 +55,7 @@ $osd_insensitive_bg_color: transparentize(mix($osd_fg_color, opacify($osd_bg_col
 $osd_insensitive_fg_color: mix($osd_fg_color, opacify($osd_bg_color, 1), 50%);
 $osd_borders_color: transparentize(black, 0.3);
 
-//$sidebar_bg_color: mix($bg_color, $base_color, 50%);
-$sidebar_bg_color: red;
+$sidebar_bg_color: mix($bg_color, $base_color, 50%);
 $base_hover_color: transparentize($fg_color, 0.95);
 
 $tooltip_borders_color: transparentize(white, 0.9);
@@ -81,14 +79,12 @@ $panel_borders_color: transparentize(black, 0.8);
 
 // Insensitive state colors
 $insensitive_fg_color: mix($fg_color, $bg_color, 50%);
-//$insensitive_bg_color: mix($bg_color, $base_color, 60%);
-$insensitive_bg_color: red;
+$insensitive_bg_color: mix($bg_color, $base_color, 60%);
 $insensitive_base_color: darken($base_color, 5%);
 $insensitive_borders_color: $borders_color;
 
 // Backdrop state colors
 $backdrop_base_color: if($variant == 'light', darken($base_color, 1%), lighten($base_color, 1%));
-//$backdrop_base_color: red;
 $backdrop_text_color: mix($text_color, $backdrop_base_color, 80%);
 $backdrop_bg_color: $bg_color;
 $backdrop_headerbar_bg_color: darken($headerbar_bg_color, 5%);
