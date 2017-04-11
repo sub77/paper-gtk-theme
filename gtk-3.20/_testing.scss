@@ -5,25 +5,42 @@
 .mate-panel-menu-bar, .mate-panel-menu-bar menubar,
 panel-toplevel.background,
 panel-toplevel.background menubar {
-background-color: $panel_bg_color;
-text-shadow: none;
+  background-color: $panel_bg_color;
+  text-shadow: none;
+  color: white;
+  font-size: 100%;
+  font‑weight: bold;
+  font: bold;
+  font: SourceCodePro+Powerline+Awesome+Regular bold;
  }
 
 .mate-panel-menu-bar button,
 #tasklist-button {
-  color: #EEEEEC;
+  color: white;
+  font-size: 100%;
+  font‑weight: normal;
+  font: SourceCodePro+Powerline+Awesome+Regular;
   text-shadow: none;
   background-color: $panel_bg_color;
   //box-shadow: inset 0 -2px #EEEEEC;
   }
 
+#na-tray * {
+  color: white;
+  font-size: 100%;
+  font‑weight: normal;
+  font: SourceCodePro+Powerline+Awesome+Regular;
+}
+
+#windowpicker schrift
 .mate-panel-menu-bar button,
 #tasklist-button * {
-  //color: #EEEEEC;
-  padding: none;
-  border: none;
-  border-radius: none;
+  padding: 0px 0px;
   text-shadow: none;
+  color: white;
+  font-size: 100%;
+  font‑weight: light;
+  font: SourceCodePro+Powerline+Awesome+Regular;
   //background-color: red;
   box-shadow: none;
   }
@@ -69,37 +86,6 @@ button:active {
         //transition-duration: 500ms;
 
         &:active { transition: $button_transition; }
-      }
-    }
-
-    &:hover {
-      @include button(hover);
-      -gtk-icon-effect: highlight;
-    }
-
-    &:active,
-    &:checked {
-      @include button(active);
-
-      transition-duration: 50ms;
-    }
-
-    &:backdrop {
-      &.flat, & {
-        @include button(backdrop);
-
-        transition: $backdrop_transition;
-        -gtk-icon-effect: none;
-
-        &:active,
-        &:checked { @include button(backdrop-active); }
-
-        &:disabled {
-          @include button(backdrop-insensitive);
-
-          &:active,
-          &:checked { @include button(backdrop-insensitive-active); }
-        }
       }
     }
   }
