@@ -1,6 +1,18 @@
 /**************
 * Mate Panel *
 ***************/
+#windowpicker schrift
+.mate-panel-menu-bar button,
+#tasklist-button * {
+  padding: 0px 0px;
+  text-shadow: none;
+  color: white;
+  font-size: 100%;
+  font‑weight: light;
+  font: SourceCodePro+Powerline+Awesome+Regular;
+  //background-color: red;
+  box-shadow: none;
+  }
 
 .mate-panel-menu-bar, .mate-panel-menu-bar menubar,
 panel-toplevel.background,
@@ -31,19 +43,6 @@ panel-toplevel.background menubar {
   font‑weight: normal;
   font: SourceCodePro+Powerline+Awesome+Regular;
 }
-
-#windowpicker schrift
-.mate-panel-menu-bar button,
-#tasklist-button * {
-  padding: 0px 0px;
-  text-shadow: none;
-  color: white;
-  font-size: 100%;
-  font‑weight: light;
-  font: SourceCodePro+Powerline+Awesome+Regular;
-  //background-color: red;
-  box-shadow: none;
-  }
 
 #tasklist-button:hover {
   //color: green;
