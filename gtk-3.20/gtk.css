@@ -372,9 +372,6 @@ treeview.view:selected {
       entry selection:backdrop:disabled, row:backdrop:disabled:selected {
         color: rgba(128, 130, 126, 0.85); }
 
-.monospace {
-  font: SourceCodeProPowerlineAwesomeRegular; }
-
 /************
  * Calendar *
  ***********/
@@ -2400,7 +2397,7 @@ row {
   background-image: none;
   /* normal panel */
   text-shadow: none;
-  color: #BABDB6; }
+  color: #F6F6EF; }
 
 /*stop panel from being spaced above bottom of screen,
   stop failure of cpufreq-appet to show all labels*/
@@ -2436,10 +2433,10 @@ row {
 .mate-panel-menu-bar.background {
   border-radius: 3px;
   /* enable for making borders visible */
-  /*    box-shadow: inset  0px  1px shade ($theme_selected_bg_color, 1.3),
-                  inset  1px  0px shade ($theme_selected_bg_color, 1.3),
-                  inset -1px  0px shade ($theme_selected_bg_color, 1.3),
-                  inset  0px -1px shade ($theme_selected_bg_color, 1.3); */ }
+  /*    box-shadow: inset  0px  1px shade ($selected_bg_color, 1.3),
+                  inset  1px  0px shade ($selected_bg_color, 1.3),
+                  inset -1px  0px shade ($selected_bg_color, 1.3),
+                  inset  0px -1px shade ($selected_bg_color, 1.3); */ }
 
 /* Keep rounded applet borders from renderin with darker corners */
 #PanelPlug {
@@ -2567,7 +2564,7 @@ dictionary */
   border-style: solid;
   border-color: transparent;
   text-shadow: none;
-  color: #444;
+  color: #F6F6EF;
   background-image: none;
   /* Does NOT march gtk3.16/3.18 results
       background-image: -gtk-gradient (radial,
@@ -2585,17 +2582,27 @@ dictionary */
 .mate-panel-menu-bar #tasklist-button:active {
   border-radius: 3px;
   color: red;
+  text-shadow: none;
+  font-size: 100%;
+  font: regular;
   border-style: solid;
   background-image: linear-gradient(to bottom, shade(#f7f7f7, 0.7), #f7f7f7 50%, shade(#f7f7f7, 1.5)); }
 
-/* FIXME, this does not work anymore with >= gtk+-3.20 */
-.mate-panel-menu-bar button .button:hover {
-  border-radius: 3px;
-  border-image: none;
-  border-style: solid;
-  border-color: shade(#444, 1.1);
-  background-image: linear-gradient(to bottom, shade(#f7f7f7, 1.5), shade(#f7f7f7, 0.7) 39%, #f7f7f7 40%, shade(#444, 0.4)); }
+.mate-panel-menu-bar #tasklist-button:active:hover,
+.mate-panel-menu-bar #tasklist-button:active {
+  color: #F6F6EF;
+  text-shadow: none;
+  font-size: 100%;
+  font: regular; }
 
+.mate-panel-menu-bar #tasklist-button:checked:hover,
+.mate-panel-menu-bar #tasklist-button:checked {
+  color: #292928;
+  text-shadow: none;
+  font-size: 100%;
+  font: regular; }
+
+/* FIXME, this does not work anymore with >= gtk+-3.20 */
 /* set normal button WnckSelector */
 .mate-panel-menu-bar button menubar menuitem {
   border-radius: 3px;
@@ -2612,7 +2619,7 @@ dictionary */
 /* set WnckSelector menuitem */
 .mate-panel-menu-bar button menubar menuitem {
   background-image: none;
-  color: #444;
+  color: #F6F6EF;
   border-style: none;
   border-width: 0px;
   border-radius: 0px; }
@@ -2695,21 +2702,10 @@ na-tray-applet {
 /* panel taskbar font & windowpicker text color*/
 .mate-panel-menu-bar #tasklist-button label {
   font-size: 100%;
-  font‑weight: light;
-  font: regular;
-  font: SourceCodeProPowerlineAwesomeRegular regular;
-  color: #BABDB6; }
+  font: bold; }
 
 /* ACTIVE TASKBAR BUTTON */
-#tasklist-button* {
-  color: green; }
-
 /* VALA APPMENU */
-.mate-panel-menu-bar #PanelApplet label,
-#tasklist-button:checked {
-  box-shadow: none;
-  text-shadow: none; }
-
 /*********
  * Menus *
  *********/
@@ -2854,24 +2850,38 @@ notebook > header {
   border: none; }
   notebook > header.top {
     border-bottom-style: solid; }
-    notebook > header.top > tabs > tab:hover {
-      box-shadow: inset 0 -2px #c4c4c4; }
-    notebook > header.top > tabs > tab:backdrop {
-      box-shadow: none; }
-    notebook > header.top > tabs > tab:checked {
-      box-shadow: inset 0 -2px #6e706c; }
+    notebook > header.top > tabs > tab {
+      box-shadow: none;
+      font-size: 100%;
+      font‑weight: regular;
+      font: regular; }
+      notebook > header.top > tabs > tab:hover {
+        box-shadow: none;
+        font-size: 100%;
+        font‑weight: regular;
+        font: regular; }
+      notebook > header.top > tabs > tab:backdrop {
+        box-shadow: none;
+        font-size: 100%;
+        font‑weight: regular;
+        font: regular; }
+      notebook > header.top > tabs > tab:checked {
+        box-shadow: none;
+        font-size: 100%;
+        font‑weight: regular;
+        font: regular; }
   notebook > header.bottom {
     border-top-style: solid; }
     notebook > header.bottom > tabs > tab:hover {
-      box-shadow: inset 0 2px #c4c4c4; }
+      box-shadow: none; }
     notebook > header.bottom > tabs > tab:backdrop {
       box-shadow: none; }
     notebook > header.bottom > tabs > tab:checked {
-      box-shadow: inset 0 2px #6e706c; }
+      box-shadow: none; }
   notebook > header.left {
     border-right-style: solid; }
     notebook > header.left > tabs > tab:hover {
-      box-shadow: inset -2px 0 #c4c4c4; }
+      box-shadow: none; }
     notebook > header.left > tabs > tab:backdrop {
       box-shadow: none; }
     notebook > header.left > tabs > tab:checked {
@@ -2879,7 +2889,7 @@ notebook > header {
   notebook > header.right {
     border-left-style: solid; }
     notebook > header.right > tabs > tab:hover {
-      box-shadow: inset 2px 0 #c4c4c4; }
+      box-shadow: none; }
     notebook > header.right > tabs > tab:backdrop {
       box-shadow: none; }
     notebook > header.right > tabs > tab:checked {
@@ -2917,8 +2927,6 @@ notebook > header {
     notebook > header > tabs > arrow:hover:not(:active):not(:backdrop) {
       background-clip: padding-box;
       background-image: none;
-      background-color: rgba(255, 255, 255, 0.3);
-      border-color: transparent;
       box-shadow: none; }
     notebook > header > tabs > arrow:disabled {
       border-color: transparent;
@@ -2938,9 +2946,6 @@ notebook > header {
     border-color: transparent; }
     notebook > header tab:hover {
       color: #717171; }
-      notebook > header tab:hover.reorderable-page {
-        border-color: rgba(196, 196, 196, 0.3);
-        background-color: rgba(247, 247, 247, 0.2); }
     notebook > header tab:backdrop {
       color: #c2c2c2; }
       notebook > header tab:backdrop.reorderable-page {
@@ -2948,11 +2953,6 @@ notebook > header {
         background-color: transparent; }
     notebook > header tab:checked {
       color: #444; }
-      notebook > header tab:checked.reorderable-page {
-        border-color: rgba(196, 196, 196, 0.5);
-        background-color: rgba(247, 247, 247, 0.5); }
-        notebook > header tab:checked.reorderable-page:hover {
-          background-color: rgba(247, 247, 247, 0.7); }
     notebook > header tab:backdrop:checked {
       color: #9e9e9e; }
       notebook > header tab:backdrop:checked.reorderable-page {
@@ -3018,7 +3018,6 @@ notebook,
 .notebook {
   padding: 0;
   background-color: #ffffff;
-  box-shadow: 0 0 0 1px #c4c4c4;
   background-clip: border-box; }
   notebook > header,
   notebook > .header,
@@ -4456,7 +4455,7 @@ spinbutton:not(.vertical) button {
     border-style: none solid none none; }
   spinbutton:not(.vertical) button:hover {
     color: #444;
-    background-color: red; }
+    background-color: rgba(68, 68, 68, 0.05); }
   spinbutton:not(.vertical) button:disabled {
     color: rgba(158, 158, 158, 0.3); }
   spinbutton:not(.vertical) button:active {
@@ -4873,7 +4872,7 @@ searchbar,
     .search-bar button:active, .location-bar button:active,
     .inline-toolbar button:focus,
     .inline-toolbar button:active {
-      font: bold;
+      font: regular;
       color: #444;
       text-shadow: none;
       box-shadow: none;

@@ -7,7 +7,6 @@ $bg_color: if($variant == 'light', #f7f7f7, #f50057);
 $fg_color: if($variant == 'light', #444, #cfd8dc);
 $text_color: if($variant == 'light', $fg_color, $fg_color);
 $headerbar_bg_color: if($variant == 'light', #888A85, darken($base_color, 10%));
-//$headerbar_bg_color: black;
 $headerbar_fg_color: if($variant == 'light', #FAFAFA, transparentize(#ffffff, 0.2));
 
 // Primary colors
@@ -55,8 +54,8 @@ $osd_insensitive_fg_color: mix($osd_fg_color, opacify($osd_bg_color, 1), 50%);
 $osd_borders_color: transparentize(black, 0.3);
 
 $sidebar_bg_color: mix($bg_color, $base_color, 50%);
-//$base_hover_color: transparentize($fg_color, 0.95);
-$base_hover_color: red;
+$base_hover_color: transparentize($fg_color, 0.95);
+//$base_hover_color: red;
 
 $tooltip_borders_color: transparentize(white, 0.9);
 $shadow_color: transparentize(black, 0.8);
@@ -75,8 +74,9 @@ $question_color: $green;
 //$panel_bg_color: transparentize(black, 0.3);
 $panel_bg_color: #292928;
 $panel_fg_color: #BABDB6;
-$panel_borders_color: red;
-//$panel_borders_color: transparentize(black, 0.8);
+$panel_text_color: #F6F6EF;
+$panel_text_color_dark: #292928;
+$panel_borders_color: transparentize(black, 0.8);
 
 // Insensitive state colors
 $insensitive_fg_color: mix($fg_color, $bg_color, 50%);

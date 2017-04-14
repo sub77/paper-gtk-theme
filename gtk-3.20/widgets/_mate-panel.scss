@@ -1,12 +1,6 @@
-$theme_selected_bg_color: $selected_bg_color;
-$theme_text_color: $text_color;
-$menu_fg_color: $fg_color;
-$menu_fg_dark_color: $panel_fg_color;
 $button_gradient_color_a: $bg_color;
 $button_gradient_color_b: $bg_color;
 $button_border: $fg_color;
-$less_dark_color: $fg_color;
-//$fg_color: red;
 
 /****************
  * Mate-Panel   *
@@ -20,7 +14,7 @@ $less_dark_color: $fg_color;
     background-image: none;
     /* normal panel */
     text-shadow: none;
-    color: $panel_fg_color;
+    color: $panel_text_color;
 }
 
 /*stop panel from being spaced above bottom of screen,
@@ -66,10 +60,10 @@ $less_dark_color: $fg_color;
 .mate-panel-menu-bar.background {
     border-radius: 3px;
 /* enable for making borders visible */
-/*    box-shadow: inset  0px  1px shade ($theme_selected_bg_color, 1.3),
-                inset  1px  0px shade ($theme_selected_bg_color, 1.3),
-                inset -1px  0px shade ($theme_selected_bg_color, 1.3),
-                inset  0px -1px shade ($theme_selected_bg_color, 1.3); */
+/*    box-shadow: inset  0px  1px shade ($selected_bg_color, 1.3),
+                inset  1px  0px shade ($selected_bg_color, 1.3),
+                inset -1px  0px shade ($selected_bg_color, 1.3),
+                inset  0px -1px shade ($selected_bg_color, 1.3); */
 }
 
 /* Keep rounded applet borders from renderin with darker corners */
@@ -106,10 +100,10 @@ GdictApplet .entry,
 GdictApplet .entry:focus {
     border-style: none;
     padding: 1px 4px 5px 4px;
-    box-shadow: inset  0px  1px shade ($theme_selected_bg_color, 1.3),
-                inset  1px  0px shade ($theme_selected_bg_color, 1.3),
-                inset -1px  0px shade ($theme_selected_bg_color, 1.3),
-                inset  0px -1px shade ($theme_selected_bg_color, 1.3);
+    box-shadow: inset  0px  1px shade ($selected_bg_color, 1.3),
+                inset  1px  0px shade ($selected_bg_color, 1.3),
+                inset -1px  0px shade ($selected_bg_color, 1.3),
+                inset  0px -1px shade ($selected_bg_color, 1.3);
 }
 
 /* the grid left from wnckpager and wncktasklist */
@@ -132,21 +126,21 @@ MatePanelAppletFrameDBus {
 /* set selected menubar menuitem */
 .mate-panel-menu-bar menubar > menuitem:hover {
     background-image: none;
-    background-color: $theme_selected_bg_color;
+    background-color: $selected_bg_color;
     border-style: solid;
     border-image: none;
     /* join menuitem to menu */
     border-radius: 3px 3px 0px 0px;
     border-width: 0px;
-    border-color: $theme_selected_bg_color;
+    border-color: $selected_bg_color;
     color: $fg_color;
 }
 
 /* set selected menu menuitem */
 .mate-panel-menu-bar menu > menuitem:hover {
     //background-image: linear-gradient(to bottom,
-    //                                  shade($theme_selected_bg_color, 1.2),
-    //                                  shade($theme_selected_bg_color, 0.3));
+    //                                  shade($selected_bg_color, 1.2),
+    //                                  shade($selected_bg_color, 0.3));
     color: $fg_color;
     border-style: solid;
     //border-width: 1px;
@@ -175,7 +169,7 @@ MatePanelAppletFrameDBus {
 .mate-panel-menu-bar menu menuitem button {
     background-image: none;
     background-color: transparent;
-    color: shade ($menu_fg_color, 1.00);
+    color: shade ($fg_color, 1.00);
 }
 
 /* FIXME, this does not work anymore with >= gtk+-3.20 */
@@ -234,7 +228,7 @@ dictionary */
     border-style: solid;
     border-color:transparent;
     text-shadow: none;
-    color: $fg_color;
+    color: $panel_text_color;
     background-image: none;
 /* Does NOT march gtk3.16/3.18 results
     background-image: -gtk-gradient (radial,
@@ -252,6 +246,9 @@ dictionary */
 .mate-panel-menu-bar #tasklist-button:active {
     border-radius: 3px;
     color: red;
+    text-shadow: none;
+    font-size: 100%;
+    font: regular;
     border-style: solid;
     background-image: linear-gradient(to bottom,
                                       shade($button_gradient_color_b, 0.7),
@@ -259,18 +256,34 @@ dictionary */
                                       shade($button_gradient_color_a, 1.5));
 }
 
-/* FIXME, this does not work anymore with >= gtk+-3.20 */
-.mate-panel-menu-bar button .button:hover {
-    border-radius: 3px;
-    border-image: none;
-    border-style: solid;
-    border-color: shade($button_border, 1.1);
-    background-image: linear-gradient(to bottom,
-                                      shade($button_gradient_color_a, 1.5),
-                                      shade($button_gradient_color_a, 0.7) 39%,
-                                      $bg_color 40%,
-                                      shade($less_dark_color, 0.4));
+.mate-panel-menu-bar #tasklist-button:active:hover,
+.mate-panel-menu-bar #tasklist-button:active {
+    color: $panel_text_color;
+    text-shadow: none;
+    font-size: 100%;
+    font: regular;
 }
+
+.mate-panel-menu-bar #tasklist-button:checked:hover,
+.mate-panel-menu-bar #tasklist-button:checked {
+    color: $panel_text_color_dark;
+    text-shadow: none;
+    font-size: 100%;
+    font: regular;
+}
+
+/* FIXME, this does not work anymore with >= gtk+-3.20 */
+//.mate-panel-menu-bar button .button:hover {
+//    border-radius: 3px;
+//    border-image: none;
+//    border-style: solid;
+//    border-color: shade($button_border, 1.1);
+//    background-image: linear-gradient(to bottom,
+//                                      shade($button_gradient_color_a, 1.5),
+//                                      shade($button_gradient_color_a, 0.7) 39%,
+//                                      $bg_color 40%,
+//                                      shade($less_dark_color, 0.4));
+//}
 
 /* set normal button WnckSelector */
 .mate-panel-menu-bar button menubar menuitem {
@@ -293,7 +306,7 @@ dictionary */
 /* set WnckSelector menuitem */
 .mate-panel-menu-bar button menubar menuitem {
     background-image:  none;
-    color: $theme_text_color;
+    color: $panel_text_color;
     border-style: none;
     border-width: 0px;
     border-radius: 0px;
@@ -304,8 +317,8 @@ dictionary */
     border-image: none;
     color: $fg_color;
     background-image: linear-gradient(to bottom,
-                                      shade($theme_selected_bg_color, 1.3),
-                                      shade($theme_selected_bg_color, 0.5));
+                                      shade($selected_bg_color, 1.3),
+                                      shade($selected_bg_color, 0.5));
 }
 
 #clock-applet-button,
@@ -339,15 +352,15 @@ PanelApplet.wnck-applet .wnck-pager {
 /* selected WnckPager */
 PanelApplet.wnck-applet .wnck-pager:selected {
     background-image: linear-gradient(to bottom,
-                                      $theme_selected_bg_color,
-                                      shade ($theme_selected_bg_color, 0.36));
+                                      $selected_bg_color,
+                                      shade ($selected_bg_color, 0.36));
 }
 
 /* prelight of WnckPager */
 PanelApplet.wnck-applet .wnck-pager:hover {
     background-image: linear-gradient(to bottom,
                                       $bg_color,
-                                      shade ($theme_selected_bg_color, 0.86));
+                                      shade ($selected_bg_color, 0.86));
 }
 
 /* no background for icon-padding area */
@@ -397,22 +410,25 @@ na-tray-applet {
 /* panel taskbar font & windowpicker text color*/
 .mate-panel-menu-bar #tasklist-button label {
   font-size: 100%;
-  font‑weight: light;
-  font: regular;
-  font: SourceCodePro+Powerline+Awesome+Regular regular;
-  color: $panel_fg_color; }
+  font: bold;
+}
 
 /* ACTIVE TASKBAR BUTTON */
-#tasklist-button* {
-  color: green;
-  //text-shadow: none;
-  //background-color: #6E706C;
-  //box-shadow: inset 0 -1px #EEEEEC;
-  }
+//#tasklist-button {
+//  color: green;
+//  text-shadow: none;
+//  box-shadow: none;
+//  text-shadow: none;
+//  font-size: 100%;
+//  font: regular;
+//  }
 
 /* VALA APPMENU */
-.mate-panel-menu-bar #PanelApplet label,
-#tasklist-button:checked {
-  box-shadow: none;
-  text-shadow: none;
-}
+//.mate-panel-menu-bar #PanelApplet label,
+//#tasklist-button:checked {
+//  box-shadow: none;
+//  text-shadow: none;
+//  font-size: 100%;
+//  font: bold;
+//  //color: $panel_fg_color;
+//}
