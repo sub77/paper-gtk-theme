@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* Copyright 2016 Sam Hewitt.
 *
 * This file is part of the Paper GTK theme.
@@ -23,7 +24,7 @@
 /* text color for entries, views and content in general */
 @define-color theme_text_color #444;
 /* widget base background color */
-@define-color theme_bg_color #f7f7f7;
+@define-color theme_bg_color #292928;
 /* text widgets and the like base background color */
 @define-color theme_base_color #ffffff;
 /* base background color of selections */
@@ -2399,7 +2400,7 @@ row {
   background-image: none;
   /* normal panel */
   text-shadow: none;
-  color: #F3F3F3; }
+  color: #BABDB6; }
 
 /*stop panel from being spaced above bottom of screen,
   stop failure of cpufreq-appet to show all labels*/
@@ -2583,7 +2584,7 @@ dictionary */
 .mate-panel-menu-bar #tasklist-button:active:hover,
 .mate-panel-menu-bar #tasklist-button:active {
   border-radius: 3px;
-  color: #444;
+  color: red;
   border-style: solid;
   background-image: linear-gradient(to bottom, shade(#f7f7f7, 0.7), #f7f7f7 50%, shade(#f7f7f7, 1.5)); }
 
@@ -2687,6 +2688,27 @@ na-tray-applet {
   color: #444;
   padding: 4px 0px;
   margin: 0px; }
+
+/**********************
+ * My modifications   *
+ **********************/
+/* panel taskbar font & windowpicker text color*/
+.mate-panel-menu-bar #tasklist-button label {
+  font-size: 100%;
+  font‑weight: light;
+  font: regular;
+  font: SourceCodeProPowerlineAwesomeRegular regular;
+  color: #BABDB6; }
+
+/* ACTIVE TASKBAR BUTTON */
+#tasklist-button* {
+  color: green; }
+
+/* VALA APPMENU */
+.mate-panel-menu-bar #PanelApplet label,
+#tasklist-button:checked {
+  box-shadow: none;
+  text-shadow: none; }
 
 /*********
  * Menus *
@@ -5413,7 +5435,7 @@ ConversationListView {
  ***********/
 #panel_window {
   background-color: #292928;
-  color: #F3F3F3;
+  color: #BABDB6;
   font: bold;
   box-shadow: inset 0 -1px #171716; }
   #panel_window .menubar,
@@ -5421,10 +5443,10 @@ ConversationListView {
   menubar,
   #panel_window menubar > menuitem {
     background-color: transparent;
-    color: #F3F3F3;
+    color: #BABDB6;
     font: bold; }
   #panel_window menubar menuitem:disabled {
-    color: rgba(243, 243, 243, 0.5); }
+    color: rgba(186, 189, 182, 0.5); }
     #panel_window menubar menuitem:disabled GtkLabel {
       color: inherit; }
     #panel_window menubar menuitem:disabled label {

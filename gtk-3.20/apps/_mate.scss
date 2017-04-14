@@ -21,7 +21,8 @@ panel-toplevel.background #PanelApplet image {
   color: $panel_fg_color; }
 
 /* panel taskbar font & windowpicker text color*/
-.mate-panel-menu-bar button label, .mate-panel-menu-bar button image,
+.mate-panel-menu-bar button label,
+.mate-panel-menu-bar button image,
 .mate-panel-menu-bar #tasklist-button label,
 .mate-panel-menu-bar #tasklist-button image,
 panel-toplevel.background button label,
