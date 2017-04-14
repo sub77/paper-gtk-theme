@@ -6,7 +6,7 @@
 .content-view {
   background-color: darken($bg_color,7%);
 
-  &:hover { -gtk-icon-effect: highlight; }
+  //&:hover { -gtk-icon-effect: highlight; }
 
   &:backdrop { background-color: darken($bg_color,7%); }
 
@@ -20,16 +20,16 @@
     border-style: none;
     border-radius: 5px;
   }
-  
+
   // +/- buttons on GtkVolumeButton popup
-  button { 
+  button {
     &:hover {
-      @extend %undecorated_button;
+      //@extend %undecorated_button;
       background-color: transparentize($fg_color,0.9);
       border-radius: 5px;
     }
 
-    &:backdrop { &:hover, &:disabled, & { @extend %undecorated_button; }}
+    //&:backdrop { &:hover, &:disabled, & { @extend %undecorated_button; }}
   }
 }
 

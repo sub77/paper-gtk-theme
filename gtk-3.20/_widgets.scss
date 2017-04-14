@@ -3,17 +3,18 @@
  ***********/
 
 @import 'widgets/action-bars';
-//@import 'widgets/app-notifications';
+@import 'widgets/app-notifications';
 @import 'widgets/base-states';
 //@import 'widgets/buttons';
-//@import 'widgets/calendar';
+//@import 'widgets/buttons_mate';
+@import 'widgets/calendar';
 @import 'widgets/checks-radios';
 @import 'widgets/color-chooser';
-//@import 'widgets/comboboxes';
+@import 'widgets/comboboxes';
 @import 'widgets/dialogs';
-//@import 'widgets/entries';
+@import 'widgets/entries';
 @import 'widgets/expanders';
-//@import 'widgets/file-chooser';
+@import 'widgets/file-chooser';
 @import 'widgets/floating-bar';
 @import 'widgets/frames';
 @import 'widgets/granite';
@@ -22,18 +23,19 @@
 @import 'widgets/level-bars';
 @import 'widgets/links';
 @import 'widgets/lists';
+@import 'widgets/mate-panel';
 @import 'widgets/menus';
-//@import 'widgets/misc';
+@import 'widgets/misc';
 @import 'widgets/notebooks';
 @import 'widgets/paned';
 @import 'widgets/pathbars';
-//@import 'widgets/popovers';
+@import 'widgets/popovers';
 @import 'widgets/print-dialog';
 @import 'widgets/progress-bars';
 @import 'widgets/scales';
 @import 'widgets/scrollbars';
-//@import 'widgets/sidebar';
-//@import 'widgets/spinbuttons';
+@import 'widgets/sidebar';
+@import 'widgets/spinbuttons';
 @import 'widgets/spinner';
 @import 'widgets/switches';
 @import 'widgets/toolbars';

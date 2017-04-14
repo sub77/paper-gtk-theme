@@ -45,7 +45,7 @@
     }
 
     &.needs-attention > label {
-      @extend %needs_attention;
+      //@extend %needs_attention;
 
       background-size: 6px 6px, 0 0;
     }
@@ -82,7 +82,7 @@ stacksidebar {
     }
 
     &.needs-attention > label {
-      @extend %needs_attention;
+      //@extend %needs_attention;
 
       background-size: 6px 6px, 0 0;
     }

@@ -15,7 +15,7 @@
     transition: $backdrop_transition;
   }
 
-  .button, button { @extend %osd_button; }
+  //.button, button { @extend %osd_button; }
 
   border { border: none; }
 }

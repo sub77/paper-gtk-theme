@@ -1,12 +1,12 @@
 /**************
 * Mate Panel *
 ***************/
-#windowpicker schrift
+//windowpicker schrift
 .mate-panel-menu-bar button,
 #tasklist-button * {
   padding: 0px 0px;
   text-shadow: none;
-  color: white;
+  color: black;
   font-size: 100%;
   font‑weight: light;
   font: SourceCodePro+Powerline+Awesome+Regular;
@@ -19,7 +19,7 @@ panel-toplevel.background,
 panel-toplevel.background menubar {
   background-color: $panel_bg_color;
   text-shadow: none;
-  color: white;
+  color: black;
   font-size: 100%;
   font‑weight: bold;
   font: bold;
@@ -28,7 +28,7 @@ panel-toplevel.background menubar {
 
 .mate-panel-menu-bar button,
 #tasklist-button {
-  color: white;
+  color: black;
   font-size: 100%;
   font‑weight: normal;
   font: SourceCodePro+Powerline+Awesome+Regular;
@@ -38,21 +38,21 @@ panel-toplevel.background menubar {
   }
 
 #na-tray * {
-  color: white;
+  color: black;
   font-size: 100%;
   font‑weight: normal;
   font: SourceCodePro+Powerline+Awesome+Regular;
 }
 
 #tasklist-button:hover {
-  //color: green;
+  color: green;
   text-shadow: none;
   //background-color: green;
   //box-shadow: inset 0 -2px #EEEEEC;
   }
 /* ACTIVE TASKBAR BUTTON */
 #tasklist-button:checked {
-  color: white;
+  color: green;
   text-shadow: none;
   background-color: #6E706C;
   //box-shadow: inset 0 -1px #EEEEEC;
@@ -68,6 +68,7 @@ button:active {
     //border-radius: 3px;
     //transition: $button_transition;
     text-shadow: none;
+    color: green;
     //background-color: red;
 
     @include button(normal);

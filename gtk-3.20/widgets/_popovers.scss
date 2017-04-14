@@ -32,16 +32,16 @@ popover.background {
 
       border: 1px solid transparentize(white, 0.9);
 
-      button { @extend %osd_button };
+     // button { @extend %osd_button };
     }
 
-    &.osd { @extend %osd; }
+    //&.osd { @extend %osd; }
   }
 
   .separator,separator { margin: 3px; }
 
   list separator { margin: 0px; }
 
-  checkbutton,
-  radiobutton { @extend modelbutton.flat; }
+  //checkbutton,
+  //radiobutton { @extend modelbutton.flat; }
 }

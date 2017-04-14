@@ -103,19 +103,19 @@ entry {
   }
 
    // linked entries
-  .linked:not(.vertical) > & { @extend %linked; }
-  .linked:not(.vertical) > &:focus + &,
-  .linked:not(.vertical) > &:focus + button,
-  .linked:not(.vertical) > &:focus + combobox > box > button.combo { border-left-color: entry_focus_border(); }
+  //.linked:not(.vertical) > & { @extend %linked; }
+  //.linked:not(.vertical) > &:focus + &,
+  //.linked:not(.vertical) > &:focus + button,
+  //.linked:not(.vertical) > &:focus + combobox > box > button.combo { border-left-color: entry_focus_border(); }
 
-  .linked:not(.vertical) > &:drop(active) + &,
-  .linked:not(.vertical) > &:drop(active) + button,
-  .linked:not(.vertical) > &:drop(active) + combobox > box > button.combo { border-left-color: $drop_target_color; }
+  //.linked:not(.vertical) > &:drop(active) + &,
+  //.linked:not(.vertical) > &:drop(active) + button,
+  //.linked:not(.vertical) > &:drop(active) + combobox > box > button.combo { border-left-color: $drop_target_color; }
 
   // Vertically linked entries
   // FIXME: take care of "colored" entries
   .linked.vertical > & {
-    @extend %linked_vertical;
+    //@extend %linked_vertical;
 
     // brighter border between linked entries
     &:not(:disabled) + entry:not(:disabled),
