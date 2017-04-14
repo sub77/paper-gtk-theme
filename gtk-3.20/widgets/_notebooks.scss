@@ -115,7 +115,7 @@ notebook {
       &:hover:not(:active):not(:backdrop) {
         background-clip: padding-box;
         background-image: none;
-        background-color: $panel_bg_color;
+        background-color: transparentize(white, 0.7);
         border-color: transparent;
         box-shadow: none;
       }
@@ -141,7 +141,7 @@ notebook {
 
         &.reorderable-page {
           border-color: transparentize($borders_color, 0.7);
-          background-color: $panel_bg_color;
+          background-color: transparentize($bg_color, 0.8);
         }
       }
 
@@ -150,17 +150,17 @@ notebook {
 
         &.reorderable-page {
           border-color: transparent;
-          background-color: $panel_bg_color;
+          background-color: transparent;
         }
       }
 
       &:checked {
         color: $fg_color;
         &.reorderable-page {
-          border-color: $panel_fg_color;
-          background-color: $panel_bg_color;
+          border-color: transparentize($borders_color, 0.5);
+          background-color: transparentize($bg_color, 0.5);
 
-          &:hover { background-color: $panel_bg_color; }
+          &:hover { background-color: transparentize($bg_color, 0.3); }
         }
       }
 
@@ -169,7 +169,7 @@ notebook {
 
         &.reorderable-page {
           border-color: $backdrop_borders_color;
-          background-color: $panel_bg_color;
+          background-color: $backdrop_bg_color;
         }
       }
 
@@ -249,9 +249,9 @@ notebook {
   }
 
   > stack:not(:only-child) { // the :not(:only-child) is for "hidden" notebooks
-    background-color: $panel_bg_color;
+    background-color: $base_color;
 
-    &:backdrop { background-color: $panel_bg_color; }
+    &:backdrop { background-color: $backdrop_base_color; }
   }
 }
 
@@ -259,7 +259,7 @@ notebook,
 .dynamic-notebook,
 .notebook {
   padding:0;
-  background-color: $panel_bg_color;
+  background-color: $base_color;
   box-shadow:0 0 0 1px $borders_color;
   background-clip: border-box;
 
@@ -267,12 +267,12 @@ notebook,
   > .header {
     border: none;
     box-shadow:none;
-    background-color: $panel_bg_color;
+    background-color: $bg_color;
   }
 
   > tab {
     border-radius: 0;
-    background-color: $panel_bg_color;
+    background-color: $bg_color;
 
     &.top {
       padding: 6px 8px 8px 8px;
