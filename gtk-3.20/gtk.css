@@ -1040,7 +1040,7 @@ colorchooser .popover.osd {
  **************/
 combobox arrow {
   -gtk-icon-source: -gtk-icontheme("pan-down-symbolic");
-  min-height: 16px;
+  min-height: 10px;
   min-width: 16px; }
 combobox:drop(active) {
   box-shadow: none; }
@@ -1118,8 +1118,8 @@ filechooserbutton:drop(active) {
  ****************/
 spinbutton:not(.vertical),
 entry {
-  min-height: 20px;
-  padding: 4px 6px;
+  min-height: 0;
+  padding: 0px;
   border: 1px solid;
   border-radius: 3px;
   transition: all 200ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
@@ -1130,10 +1130,10 @@ entry {
   spinbutton:not(.vertical) image.left,
   entry image.left {
     padding-left: 0;
-    padding-right: 6px; }
+    padding-right: 0px; }
   spinbutton:not(.vertical) image.right,
   entry image.right {
-    padding-left: 6px;
+    padding-left: 0px;
     padding-right: 0; }
   spinbutton:not(.vertical) undershoot.left,
   entry undershoot.left {
@@ -1161,7 +1161,7 @@ entry {
   entry.flat:focus,
   entry.flat {
     min-height: 0;
-    padding: 2px;
+    padding: 0px;
     background-image: none;
     border-color: transparent;
     border-radius: 0; }
@@ -2422,6 +2422,14 @@ row {
   background-image: none;
   background-color: transparent;
   box-shadow: none; }
+
+.mate-panel-menu-bar menubar {
+  border-image: none;
+  border-color: transparent;
+  background-image: none;
+  background-color: transparent;
+  box-shadow: none;
+  color: #F6F6EF; }
 
 /* this makes text readable with all kind of wallpapers if using a transparent panel */
 /*Limit this to the panel itself, keeping it off the menus*/
@@ -5392,6 +5400,155 @@ decoration {
 /**********************
  * DE-Specific Styles *
  **********************/
+/********
+* Unity *
+*********/
+/* Unity window border color */
+/* Backdrop Unity window border color */
+/* Unity window text color */
+/* Backdrop Unity window text color */
+UnityDecoration {
+  /* Border properties (top, right, bottom, left) */
+  -UnityDecoration-extents: 28px 1px 1px 1px;
+  /* the size of the decorations  */
+  -UnityDecoration-input-extents: 10px;
+  /* the extra size of the input areas */
+  /* Shadows settings */
+  -UnityDecoration-shadow-offset-x: 1px;
+  /* Size property, the shadow x offset */
+  -UnityDecoration-shadow-offset-y: 1px;
+  /* Size property, the shadow y offset */
+  -UnityDecoration-active-shadow-color: rgba 0, 0, 0, 0.647;
+  /* Color property, active window shadow color */
+  -UnityDecoration-active-shadow-radius: 8px;
+  /* Size property, active window shadow radius */
+  -UnityDecoration-inactive-shadow-color: rgba 0, 0, 0, 0.647;
+  /* Color property, inactive windows shadow color */
+  -UnityDecoration-inactive-shadow-radius: 5px;
+  /* Size property, inactive windows shadow radius */
+  /* Glow applied to the selected scaled window */
+  -UnityDecoration-glow-size: 8px;
+  /* Size property, size of glow */
+  -UnityDecoration-glow-color: #6e706c;
+  /* Color property of the glow */
+  /* Title settings */
+  -UnityDecoration-title-indent: 10px;
+  /* Size property, left indent of the title */
+  -UnityDecoration-title-fade: 35px;
+  /* Size property, space of the title that can be faded */
+  -UnityDecoration-title-alignment: 0.0;
+  /* Float from 0.0 to 1.0, to align the title */
+  background-color: #546e7a;
+  color: #dbdee0; }
+  UnityDecoration .top {
+    padding: 0 5px 0 5px;
+    border-radius: 4px 4px 0px 0px;
+    box-shadow: none;
+    border: 1px solid #546e7a;
+    border-bottom-width: 0;
+    background-color: #546e7a;
+    color: #dbdee0;
+    border-top: 1px solid rgba(255, 255, 255, 0.1); }
+    UnityDecoration .top:backdrop {
+      border-bottom-width: 0;
+      background-color: #3f535c;
+      color: #c0c5c8;
+      border-top: 1px solid rgba(255, 255, 255, 0.1); }
+    UnityDecoration .top .menuitem {
+      color: #dbdee0; }
+      UnityDecoration .top .menuitem:backdrop {
+        background-color: #3f535c;
+        color: #c0c5c8; }
+
+UnityDecoration.left,
+UnityDecoration.right {
+  background-repeat: repeat-x;
+  background-color: #536c78;
+  background-size: 1px 120px;
+  background-clip: border-box;
+  background-image: linear-gradient(to bottom, #546e7a, #536c78); }
+
+UnityDecoration.bottom {
+  background-size: 1px;
+  background-repeat: repeat-x;
+  background-color: #536c78; }
+
+UnityDecoration.left:backdrop,
+UnityDecoration.right:backdrop,
+UnityDecoration.bottom:backdrop {
+  background-size: 1px;
+  background-repeat: repeat-x;
+  background-color: #3f535c; }
+
+/**************
+* Unity Panel *
+***************/
+UnityPanelWidget,
+.unity-panel {
+  background-color: red;
+  color: #dbdee0; }
+
+UnityPanelWidget:backdrop,
+.unity-panel:backdrop {
+  background-color: red;
+  color: #c0c5c8; }
+
+.unity-panel.menuitem,
+.unity-panel .menuitem {
+  border-width: 0 1px;
+  color: #dbdee0; }
+
+.unity-panel.menubar,
+.unity-panel .menubar {
+  color: #dbdee0; }
+
+.unity-panel.menu.menubar,
+.unity-panel .menu .menubar {
+  background-color: red;
+  color: #dbdee0; }
+
+.unity-panel.menubar:backdrop,
+.unity-panel .menubar *:backdrop {
+  color: #9e9e9e; }
+
+.unity-panel.menubar.menuitem,
+.unity-panel.menubar .menuitem {
+  padding: 3px 5px;
+  border-width: 1px;
+  border-style: solid;
+  border: none;
+  background: none;
+  color: #dbdee0;
+  box-shadow: none; }
+
+.unity-panel.menubar.menuitem:hover,
+.unity-panel.menubar .menuitem:hover {
+  border-radius: 0;
+  background-color: #526b77;
+  color: #dbdee0;
+  box-shadow: none; }
+
+.unity-panel.menubar .menuitem *:hover {
+  color: white;
+  box-shadow: none; }
+
+.unity-panel.menubar .menuitem.separator,
+.unity-panel.menubar.menuitem.separator {
+  border: none;
+  color: #c4c4c4; }
+
+/* Force Quit */
+SheetStyleDialog.unity-force-quit {
+  background-color: #ffffff; }
+
+@keyframes playbackmenuitem_spinner {
+  to {
+    -gtk-icon-transform: rotate(1turn); } }
+.menu IdoPlaybackMenuItem.menuitem:active {
+  -gtk-icon-source: -gtk-icontheme("process-working-symbolic");
+  animation: playbackmenuitem_spinner 1s infinite linear;
+  color: #6e706c; }
+
 /***********************
  * App-Specific Styles *
  ***********************/

@@ -52,6 +52,15 @@ $button_border: $fg_color;
     //color: $panel_text_color;
 }
 
+.mate-panel-menu-bar menubar {
+    border-image: none;
+    border-color: transparent;
+    background-image: none;
+    background-color: transparent;
+    box-shadow: none;
+    color: $panel_text_color;
+}
+
 /* this makes text readable with all kind of wallpapers if using a transparent panel */
 /*Limit this to the panel itself, keeping it off the menus*/
 #PanelApplet label,
