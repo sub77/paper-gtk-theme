@@ -7,7 +7,7 @@ $bg_color: if($variant == 'light', #f7f7f7, #f50057);
 $fg_color: if($variant == 'light', #444, #cfd8dc);
 $text_color: if($variant == 'light', $fg_color, $fg_color);
 $headerbar_bg_color: if($variant == 'light', #888A85, darken($base_color, 10%));
-$headerbar_fg_color: if($variant == 'light', #FAFAFA, transparentize(#ffffff, 0.2));
+$headerbar_fg_color: if($variant == 'light', #000000, transparentize(#ffffff, 0.2));
 
 // Primary colors
 $red: #d32f2f;

@@ -23,6 +23,7 @@ $button_border: $fg_color;
 .mate-panel-menu-bar,
 .mate-panel-menu-bar * {
     padding: 0px;
+    //color: $panel_text_color;
 }
 
 /*Keep above from removing padding from menus*/
@@ -30,11 +31,13 @@ $button_border: $fg_color;
 .mate-panel-menu-bar menuitem,
 .mate-panel-menu-bar .menuitem{
     padding: 6px;
+    //color: $panel_text_color;
 }
 
 /* workaround to avoid unwanted black frames if switching compositor on/off */
 .mate-panel-menu-bar .window-frame.csd.popup {
     box-shadow: none;
+    //color: $panel_text_color;
 }
 
 
@@ -46,6 +49,7 @@ $button_border: $fg_color;
     background-image: none;
     background-color: transparent;
     box-shadow: none;
+    //color: $panel_text_color;
 }
 
 /* this makes text readable with all kind of wallpapers if using a transparent panel */
